@@ -57,6 +57,14 @@ class Deck extends Component {
     const item = data[this.state.index];
 
     direction === 'right' ? onSwipeRight(item) : onSwipeLeft(item);
+
+    //is not convenient to update the state this way, in this project we are doing it because in the official
+    //docs they are wrote like this
+    //feel free to remove the position from the state by writing this.position.setValue(), but remember to also
+    //change all position references in this file
+    this.state.position.setValue({ x: 0, y: 0 });
+     
+    this.setState({ index: this.state.index+1 });
   }
 
   resetPosition() {
