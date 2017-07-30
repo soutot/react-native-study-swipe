@@ -111,7 +111,9 @@ class Deck extends Component {
         )
       }
       return (
-        <View key={item.id} style={styles.cardStyle}>
+        <View key={item.id} 
+          style={[styles.cardStyle, { top: 10 * (i - this.state.index)}]}
+        >
           {
             this.props.renderCard(item)
             //renderCard(item) is defined in main.js
